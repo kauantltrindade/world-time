@@ -27,6 +27,7 @@ new w_times[e_world_timer];
 
 stock EnableWorldTime()
 {
+    @world_time();
     w_times[timer] = SetTimer("@world_time", (1000 * 60), true);
 }
 
@@ -50,8 +51,6 @@ stock DisableWorldTime(hour = 12)
 
 public OnGameModeInit()
 {
-    @world_time();
-
     #if defined inc_world_time
         return inc_world_time();
     #else
